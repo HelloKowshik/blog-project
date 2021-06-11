@@ -1,0 +1,33 @@
+<%- include('../../partials/header.ejs')%>
+<div class="container my-container my-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card card-body">
+                <h4 class="mb-3 text-center">Wellcome, Log In</h4>
+                <hr/>
+            <form action="/auth/login" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control <%= errors.email? 'is-invalid' : ''%>">
+                    <div class="invalid-feedback">
+                        <%= errors.email && errors.email %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control <%= errors.password? 'is-invalid' : ''%>">
+                    <div class="invalid-feedback">
+                        <%= errors.password && errors.password %>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Sign In">
+                
+            </form>
+            <a href="/auth/signup" class="my-3 text-center">Don't have account? create one</a>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer.ejs')%>
+</body>
+</html>
